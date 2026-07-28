@@ -20,11 +20,11 @@ const char AWS_IOT_ENDPOINT[] = "ne9e6696.ala.asia-southeast1.emqxsl.com";
 
 /* ================= RELAY CONFIG ================= */
 
-#define RELAY_COUNT 4
+#define RELAY_COUNT 5
 int relayPins[RELAY_COUNT] = {5, 18, 19, 21, 22};
 
-#define RELAY_ON LOW
-#define RELAY_OFF HIGH
+#define RELAY_ON HIGH
+#define RELAY_OFF LOW
 
 /* ================= BLE ================= */
 
