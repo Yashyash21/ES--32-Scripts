@@ -10,8 +10,8 @@
 #include <BLEUtils.h>
 #include <BLE2902.h>
 
-#define THINGNAME "Synetra"
-#define PI_ID "SDF2"
+#define THINGNAME "SYNETRA 5 + FAN"
+#define PI_ID ""
 
 String relayTopic;
 String esp_id;
@@ -63,11 +63,11 @@ hw_timer_t *triacTimer = NULL;
 
 const uint16_t dimmingDelays[6] = {
     0,
-    7000,
-    6200,
-    4600,
-    2800,
-    1200};
+    6000,
+    5500,
+    4000,
+    2400,
+    800};
 
 /* ================= ESP ID ================= */
 
