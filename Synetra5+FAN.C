@@ -21,8 +21,11 @@ const char AWS_IOT_ENDPOINT[] = "ne9e6696.ala.asia-southeast1.emqxsl.com";
 /* ================= RELAY CONFIG ================= */
 
 #define RELAY_COUNT 6
-int relayPins[5] = {5, 18, 19, 21, 22};
-
+int relayPins[5] = {19,5,21,18,22};
+// right side K1 - r2   
+ 21,18,5,19,22
+5,18,19,21,22 -- 
+// k2- r3,k3- correct , R4-K1
 #define RELAY_ON HIGH
 #define RELAY_OFF LOW
 
@@ -63,8 +66,8 @@ hw_timer_t *triacTimer = NULL;
 
 const uint16_t dimmingDelays[6] = {
     0,
-    6000,
     5500,
+    5000,
     4000,
     2400,
     800};
@@ -318,22 +321,22 @@ void messageHandler(char *topic, byte *payload, unsigned int length)
       // Relay 2,3,4 = Normal Relays
       else if (relayNo == 2)
       {
-        digitalWrite(5,
+        digitalWrite(19,
                      state == "ON" ? RELAY_ON : RELAY_OFF);
       }
       else if (relayNo == 3)
       {
-        digitalWrite(18,
+        digitalWrite(21,
                      state == "ON" ? RELAY_ON : RELAY_OFF);
       }
       else if (relayNo == 4)
       {
-        digitalWrite(19,
+        digitalWrite(18,
                      state == "ON" ? RELAY_ON : RELAY_OFF);
       }
       else if (relayNo == 5)
       {
-        digitalWrite(21,
+        digitalWrite(5,
                      state == "ON" ? RELAY_ON : RELAY_OFF);
       }
       else if (relayNo == 6)
